@@ -7,7 +7,7 @@ function getComputerChoice() {
             return "rock";
         } else if (randomInt === 1) {
             return "paper";
-        } else if (randomInt === 2) {
+        } else {
             return "scissors";
         };
 };
@@ -30,8 +30,7 @@ function playRound() {
     } else if (computerSelection === "scissors" && playerSelection === "rock") {
         return "player";
     } else {
-        console.log("Please enter 'Rock' 'Paper' or 'Scissors'");
-        return; 
+        console.log("Please enter 'Rock' 'Paper' or 'Scissors'"); 
     };
 };
 
@@ -62,6 +61,6 @@ if (playerScore === 0) {
     console.log("It's a tie overall.");
 } else if (playerScore >= 1) {
     console.log("You won overall.");
-} else if (playerScore < 0) {
+} else {
     console.log("You lost overall.");
 };
