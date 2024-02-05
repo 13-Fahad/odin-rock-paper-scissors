@@ -31,22 +31,22 @@ function playRound() {
         return "player";
     } else {
         console.log("Please enter 'Rock' 'Paper' or 'Scissors'");
+        return; 
     };
 };
 
-let playerWins = 0;
-let computerWins = 0;
+let playerScore = 0;
 
 function playGame() {
     let winner = playRound();
     if (winner === "computer") {
-        ++computerWins;
+        --playerScore;
         console.log("You lost a game.");
     } else if (winner === "player") {
-        ++playerWins;
+        ++playerScore;
         console.log("You won a game.");
     } else if (winner === "tie") {
-        return console.log("You tied a game.");
+        console.log("You tied a game.");
     } else {
         playGame();
     }
@@ -58,10 +58,10 @@ playGame();
 playGame();
 playGame();
 
-if (playerWins === computerWins) {
+if (playerScore === 0) {
     console.log("It's a tie overall.");
-} else if (playerWins > computerWins) {
+} else if (playerScore >= 1) {
     console.log("You won overall.");
-} else if (playerWins < computerWins) {
-    console.log("You lost overall.")
+} else if (playerScore < 0) {
+    console.log("You lost overall.");
 };
